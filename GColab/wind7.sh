@@ -1,5 +1,13 @@
-echo -e "$123\n$123\n" | sudo passwd
-rm -rf ngrok  ngrok.zip  ng.sh > /dev/null 2>&1
+#! /bin/bash
+# Make Instance Ready for Remote Desktop or RDP
+apt-get update
+rm -rf win7.qcow2 win7 win7.gz ngrok ngrok.zip ng.sh > /dev/null 2>&1
+echo "Download windows files"
+wget -O win7.gz https://go.aank.me/win/w7.qcow2.gz
+gunzip win7.gz
+echo "Wait..."
+echo "I m Working Now.."
+mv win7 win7.qcow2
 wget -O ng.sh https://bit.ly/GCngr0k > /dev/null 2>&1
 chmod +x ng.sh
 ./ng.sh
@@ -16,26 +24,26 @@ echo "jp - Japan (Tokyo)"
 echo "in - India (Mumbai)"
 read -p "choose ngrok region: " CRP
 ./ngrok tcp --region $CRP 3388 &>/dev/null &
-echo "===================================="
-echo "Install RDP"
-echo "===================================="
-docker pull danielguerra/ubuntu-xrdp
 clear
-echo "===================================="
-echo "Start RDP"
-echo "===================================="
-echo "===================================="
-echo "Username : ubuntu"
-echo "Password : ubuntu"
-echo "RDP Address:"
+echo Downloading files from aank.me
+apt-get install qemu-system-x86 -y
+echo "Wait..."
+echo "Starting Windows 7"
+qemu-system-x86_64 -hda win7.qcow2 -m 8G -smp cores=4 -net user,hostfwd=tcp::3388-:3389 -net nic -object rng-random,id=rng0,filename=/dev/urandom -device virtio-rng-pci,rng=rng0 -vga vmware -nographic &>/dev/null &
+clear
+echo RDP Address:
 curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*public_url":"tcp:..([^"]*).*/\1/p'
 echo "===================================="
+echo "Username: aank"
+echo "Password: Lingg@H0sting"
+echo "Ctrl + C To Copy"
 echo "===================================="
-echo "Don't close this tab to keep RDP running"
-echo "Wait to finish bot and next open RDC to connect"
+echo "Don't Close This Tab"
+echo "Wait 1 - 2 minut for finishing bot"
+echo "RDP run up to 12 hours"
+echo "Support YT Channel-> Aank is ME, thankyou"
+echo "Link-> https://aank.me/Youtube"
 echo "===================================="
-echo "===================================="
-docker run --rm -p 3388:3389 danielguerra/ubuntu-xrdp:20.04 > /dev/null 2>&1
 b='\033[1m'
 r='\E[31m'
 g='\E[32m'
@@ -55,3 +63,4 @@ printf """$c$b
     $r  Support YT Channel-> Aank is ME © 2022 $c https://aank.me/Youtube 
           
 $endc$enda""";
+sleep 43200

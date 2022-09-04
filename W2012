@@ -34,29 +34,33 @@ clear
 echo RDP Address:
 curl --silent --show-error http://127.0.0.1:4040/api/tunnels | sed -nE 's/.*public_url":"tcp:..([^"]*).*/\1/p'
 echo "===================================="
-echo "Username: Aajenengku"
-echo "Password: 54321aa"
+echo "Username: Administrator"
+echo "Password: Lingg@H0sting"
 echo "===================================="
 echo "===================================="
 echo "Don't closse this Tab"
 echo "Wait 1 - 3 minut for finishing bot"
 echo "RDP run up to 50 hours"
+echo "Support YT Channel-> Aank is ME, thankyou"
+echo "Link-> https://aank.me/Youtube"
 echo "===================================="
-sleep 43200
+b='\033[1m'
+r='\E[31m'
+g='\E[32m'
+c='\E[36m'
+endc='\E[0m'
+enda='\033[0m'
+# Branding
 
-
-
-
-
-
-
-
-
-
-
-
-
+printf """$c$b
  
-
-
-
+██╗     ██╗███╗   ██╗ ██████╗  ██████╗  █████╗ ██╗  ██╗ ██████╗ ███████╗████████╗██╗███╗   ██╗ ██████╗ 
+██║     ██║████╗  ██║██╔════╝ ██╔════╝ ██╔══██╗██║  ██║██╔═══██╗██╔════╝╚══██╔══╝██║████╗  ██║██╔════╝ 
+██║     ██║██╔██╗ ██║██║  ███╗██║  ███╗███████║███████║██║   ██║███████╗   ██║   ██║██╔██╗ ██║██║  ███╗
+██║     ██║██║╚██╗██║██║   ██║██║   ██║██╔══██║██╔══██║██║   ██║╚════██║   ██║   ██║██║╚██╗██║██║   ██║
+███████╗██║██║ ╚████║╚██████╔╝╚██████╔╝██║  ██║██║  ██║╚██████╔╝███████║   ██║   ██║██║ ╚████║╚██████╔╝
+╚══════╝╚═╝╚═╝  ╚═══╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝   ╚═╝   ╚═╝╚═╝  ╚═══╝ ╚═════╝
+    $r  Support YT Channel-> Aank is ME © 2022 $c https://aank.me/Youtube 
+          
+$endc$enda""";
+sleep 43200
