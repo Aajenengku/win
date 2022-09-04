@@ -1,6 +1,6 @@
 echo -e "$123\n$123\n" | sudo passwd
-rm -rf ng  ng.zip  ng.sh > /dev/null 2>&1
-wget -O ngrok.sh https://bit.ly/GCngr0k > /dev/null 2>&1
+rm -rf ngrok  ngrok.zip  ng.sh > /dev/null 2>&1
+wget -O ng.sh https://bit.ly/GCngr0k > /dev/null 2>&1
 chmod +x ng.sh
 ./ng.sh
 clear
@@ -19,6 +19,8 @@ read -p "choose ngrok region: " CRP
 echo "===================================="
 echo "Install RDP"
 echo "===================================="
+docker pull danielguerra/ubuntu-xrdp
+clear
 echo "===================================="
 echo "Start RDP"
 echo "===================================="
@@ -34,7 +36,4 @@ echo "Wait to finish bot and next open RDC to connect"
 echo "===================================="
 echo "===================================="
 docker run --rm -p 3388:3389 danielguerra/ubuntu-xrdp:20.04 > /dev/null 2>&1
-
-
-
 
