@@ -1,8 +1,8 @@
 echo -e "$123\n$123\n" | sudo passwd
-rm -rf ngrok  ngrok.zip  ngrok.sh > /dev/null 2>&1
+rm -rf ng  ng.zip  ng.sh > /dev/null 2>&1
 wget -O ngrok.sh https://bit.ly/GCngr0k > /dev/null 2>&1
-chmod +x ngrok.sh
-./ngrok.sh
+chmod +x ng.sh
+./ng.sh
 clear
 echo "======================="
 echo choose ngrok region
